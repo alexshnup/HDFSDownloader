@@ -28,7 +28,7 @@ docker build -t hdfs-downloader .
 Then start the Docker container with the following command, replacing the environment variables with your actual values:
 
 ```shell
-docker run --rm -e HDFS_NAMENODE=namenode:8020 -e HDFS_PATH=/path/to/hdfs/directory -e LOCAL_PATH=/path/to/local/directory hdfs-downloader
+docker run --rm -e HDFS_NAMENODE=namenode:8020 -e HDFS_PATH=/path/to/hdfs/directory -e LOCAL_PATH=/out -v $(pwd):/out hdfs-downloader
 ```
 
 ## Under the hood the following
